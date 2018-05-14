@@ -5,7 +5,6 @@ with open('README.rst', 'r') as f:
 
 setup(
     name='shrincols',
-    version='0.1.0',
     description='Tool for fit string to a fixed number of cols.',
     long_description=readme,
     author='Thiago Melo',
@@ -19,6 +18,7 @@ setup(
         ]
     },
     classifiers = [],
-    download_url = 'https://github.com/thiagolcmelo/desafio-idwall/tree/master/strings/archive/0.1.tar.gz',
-    url = 'https://github.com/thiagolcmelo/desafio-idwall/tree/master/strings',
+    url = 'https://github.com/thiagolcmelo/shrincols',
+    download_url = 'https://github.com/thiagolcmelo/shrincols/archive/0.1.tar.gz',
+    version='0.1.0',
 )
