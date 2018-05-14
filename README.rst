@@ -22,6 +22,7 @@ The input might be a filename:
 or a string:
 
 ::
+
     $ shrincols "some text goes here ..." -c 80
 
 The option ``-j`` forces the text to be justified:
