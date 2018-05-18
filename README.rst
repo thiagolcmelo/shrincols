@@ -1,7 +1,11 @@
 shrincols
 =========
 
-CLI for making a text to fit a max number of columns.
+CLI for making a text to fit in a max number of columns. It is possible to
+especify the max number of columns as well as to juntify it.
+
+It is possible to write output to a file and to pipe a text for the script's 
+standard input.
 
 Preparing for Development
 -------------------------
@@ -31,7 +35,18 @@ The option ``-j`` forces the text to be justified:
 
     $ shrincols filename.txt -c 80 -j
 
-It would be a nice feature to read standard input, we will implement soon.
+Altough the result will always be printed on the standard output, the option
+``-o`` might be used for writing the result to a file.
+
+::
+
+    $ shrincols filename.txt -c 40 -o output.txt
+
+It is also possible to pipe standard output into the script's standard input:
+
+::
+
+    $ cat filename.txt | shrincols -c 40
 
 Running Tests
 -------------

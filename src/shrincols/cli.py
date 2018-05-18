@@ -7,6 +7,8 @@ def shrink_cols(text, cols):
     """
     shrinks a text for fit in `cols` columns
     """
+    if len(text) <= cols:
+        return text
     if re.sub("\s+", "", text) == "":
         return "\n"
     i = 1
@@ -88,6 +90,8 @@ def create_parser():
         help='Max number of columns')
     parser.add_argument('--justify', '-j',
         help='Justify the text', action='store_true')
+    parser.add_argument('--output', '-o',
+        help='File output')
     return parser
 
 def manager(args):
@@ -108,6 +112,10 @@ def manager(args):
             result = ''.join(lines)
     else:
         result = shrink_cols(args.string, cols)
+    
+    if args.output:
+        with open(args.output, 'w') as f:
+            f.write(result)
     return result
 
 def main():
@@ -115,7 +123,11 @@ def main():
     entry point for setup tools
     """
     parser = create_parser()
-    args = parser.parse_args()
+    if not sys.stdin.isatty():
+        input_string = sys.stdin.read()
+        args = parser.parse_args([input_string] + sys.argv[1:])
+    else:
+        args = parser.parse_args()
     print(manager(args))
     
 if __name__ == '__main__':

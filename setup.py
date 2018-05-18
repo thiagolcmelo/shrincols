@@ -20,5 +20,5 @@ setup(
     classifiers = [],
     url = 'https://github.com/thiagolcmelo/shrincols',
     download_url = 'https://github.com/thiagolcmelo/shrincols/archive/0.1.1.tar.gz',
-    version='0.1.1',
+    version='0.1.2',
 )
